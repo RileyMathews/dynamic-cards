@@ -8,6 +8,7 @@ const buildCard = (text) => {
     const button = document.createElement("button")
     button.textContent = "delete"
     button.setAttribute("id", "button--"+currentCard)
+    button.setAttribute("class", "deleteButton")
     card.appendChild(button)
     return card
 }
