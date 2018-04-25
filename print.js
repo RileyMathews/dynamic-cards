@@ -3,3 +3,5 @@ const printCard = (text) => {
     const output = document.querySelector("#output")
     output.appendChild(buildCard(text))
 }
+
+printCard("test")
