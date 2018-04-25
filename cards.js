@@ -9,6 +9,26 @@ const buildCard = (text) => {
     button.setAttribute("id", "button--"+currentCard)
     currentCard++
     button.setAttribute("class", "deleteButton")
+    button.addEventListener("click", () => {
+
+        //obtain a unique reference to the button that wqs clicked
+        const buttonArrayId = event.target.getAttribute("id").split('-')
+        const uniqueButtonID = buttonArrayId[2]
+
+        //start iterating through cards to find the matching card component
+        const cards = document.querySelectorAll("card")
+        cards.forEach(card => {
+
+            //obtain unique reference to card
+            const cardArrayId = card.getAttribute("id").split('-')
+            const uniqueCardID = cardArrayId[2]
+
+            //if the unique id's in the number match, delete the card
+            if (uniqueCardID === uniqueButtonID) {
+                output.removeChild(card)
+            }
+        })
+    })
     card.appendChild(button)
     return card
 }
