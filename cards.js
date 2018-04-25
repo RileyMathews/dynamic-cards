@@ -4,10 +4,10 @@ const buildCard = (text) => {
     const card = document.createElement("card")
     card.textContent = text
     card.setAttribute("id", "card--"+currentCard)
-    currentCard++
     const button = document.createElement("button")
     button.textContent = "delete"
     button.setAttribute("id", "button--"+currentCard)
+    currentCard++
     button.setAttribute("class", "deleteButton")
     card.appendChild(button)
     return card
